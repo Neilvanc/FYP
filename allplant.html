@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <title>Plant Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .plant-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .plant-card {
+            width: 200px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .plant-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .plant-name {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .filters {
+            text-align: left; /* Align to the right */
+            margin-bottom: 20px;
+        }
+
+        /* Updated styling for dropdown */
+        .filter-dropdown {
+            margin-left: 10px; /* Add margin for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1>Plant Collection</h1>
+    <div class="filters">
+        <label for="filterDropdown" class="filter-dropdown">Filter by:</label>
+        <select id="filterDropdown">
+            <option value="all">All Plants</option>
+            <option value="food">Plants for food</option>
+            <option value="medicine">Plants for medicine</option>
+            <option value="spiritual">Plants for Spiritual Healing</option>
+            <option value="utility">Plants for Utility</option>
+            <option value="ceremonies">Plants for Ceremonies</option>
+            <option value="aesthetic">Plants for Aesthetic</option>
+            <option value="uses">Plants for Other Uses</option>
+        </select>
+    </div>
+
+    <div class="plant-container">
+        <div class="plant-card food" onclick="location.href='DB.html'">
+            <img class="plant-image" src="Durianbiasa.jpg" alt="Durian Biasa">
+            <p class="plant-name">Durian Biasa</p>
+        </div>
+        <div class="plant-card medicine" onclick="location.href='pokok kees.html'">
+            <img class="plant-image" src="pokokkees.jpg" alt="Pokok Kees">
+            <p class="plant-name">Pokok Kees</p>
+        </div>
+        <div class="plant-card spiritual" onclick="location.href='labu bulat.html'">
+            <img class="plant-image" src="labubulat1.jpg" alt="Labu Bulat">
+            <p class="plant-name">Labu Bulat</p>
+        </div>
+        <!-- Add more plant cards as needed -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterDropdown = document.getElementById('filterDropdown');
+            const plantCards = document.querySelectorAll('.plant-card');
+
+            filterDropdown.addEventListener('change', function () {
+                const selectedFilter = filterDropdown.value;
+
+                plantCards.forEach(function (card) {
+                    const cardClasses = card.classList;
+                    const plantType = cardClasses[1];
+
+                    if (selectedFilter === 'all' || selectedFilter === plantType) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

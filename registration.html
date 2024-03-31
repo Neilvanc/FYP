@@ -1,0 +1,74 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+    width: 300px; 
+    margin: 0 auto;
+}
+
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+select {
+    padding: 10px; 
+}
+
+button {
+    width: 100%; 
+}
+
+select option {
+    text-align: center;
+}
+    </style>
+    <script>
+
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="register.php" method="POST" onsubmit="return validatePassword();">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" title="Please enter a valid email address" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirmPassword">Re-type Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <label for="role">Choose Role:</label>
+            <select name="role" id="role" style="width: 100%;"> 
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </br>
+    </br>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+    </div>
+</body>
+</html>

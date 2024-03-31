@@ -1,0 +1,103 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --background-color: #f2f2f2;
+      --table-border-color: #ddd;
+      --table-header-bg-color: #e2e8f0; 
+  }
+
+  body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      height: 100vh;
+      background-image: url('background-image.jpg');
+      background-size: cover; 
+      background-position: center; 
+  }
+
+  .container {
+      width: 90%;
+      max-width: 600px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      overflow: hidden; 
+  }
+
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--table-border-color);
+  }
+
+  th, td {
+      border: 1px solid var(--table-border-color);
+      padding: 8px 12px; 
+      text-align: left;
+  }
+
+  th {
+      background-color: var(--table-header-bg-color);
+      color: #333; 
+  }
+
+  tr:nth-child(even) {
+      background-color: #f7fafc; 
+  }
+
+  tr:hover {
+      background-color: #e2e8f0;
+  }
+
+  a {
+      color: var(--primary-color);
+      text-decoration: none;
+  }
+
+  a:hover {
+      text-decoration: underline;
+  }
+
+  </style>
+  <title>Ethnobotanical Databases</title>
+  </head>
+  <body>
+    <div class="container mx-auto max-w-md bg-white rounded-lg shadow-md p-5">
+  <center>
+  <table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Ethnobotanical database</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>EcoPort</td>
+        <td><a href="http://www.ecoport.org">www.ecoport.org</a></td>
+      </tr>
+      <tr>
+        <td>Global Biodiversity Information Facility (GBIF)</td>
+        <td><a href="https://www.gbif.org">www.gbif.org</a></td>
+      </tr>
+      <tr>
+        <td>TROPICOS</td>
+        <td><a href="http://www.tropicos.org">www.tropicos.org</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </center>
+  </div>
+  </body>
+  </html>
